@@ -7,6 +7,13 @@ $(document).ready(function() {
     setTimeout(function() {
         $(".Loading").fadeOut('slow');
         $('body').css({overflow: 'scroll'});
-    },3000);
+    },2000);
 });
 
+
+$(".side-nav ul li a").click(function () {
+
+    let navLink = $(this).attr("href");//section id
+    let sectionOffset = $(navLink).offset().top ;//section start
+    $("html,body").animate({ scrollTop: sectionOffset }, 1000);
+  });
